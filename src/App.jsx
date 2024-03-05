@@ -1,10 +1,24 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { styled } from 'styled-components';
+import HomePage from './pages/HomePage';
+
 function App() {
   return (
-    <>
-      <h1>Opa</h1>
-      <h2>Opaaae</h2>
-    </>
+    <PageContainer>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
+    </PageContainer>
   );
 }
 
+const PageContainer = styled.main`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 export default App;

@@ -22,7 +22,7 @@ export default function Carousel() {
     <div
       style={{
         width: '100%',
-        maxWidth: '600px',
+        maxWidth: '1000px',
         height: '300px',
         overflow: 'hidden',
         position: 'relative',

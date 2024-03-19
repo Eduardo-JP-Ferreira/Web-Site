@@ -14,7 +14,7 @@ export default function Header() {
 
 const ContainerHeader = styled.div`
   background-color: black;
-  width: 80%;
+  width: 100%;
   height: 70px;
   display: flex;
   justify-content: center;
@@ -34,7 +34,6 @@ const Logo = styled.div`
   img {
     width: 51px;
     height: 51px;
-    /* border-radius: 50%; */
   }
   h1 {
     font-size: 23px;

@@ -1,8 +1,18 @@
 import styled from 'styled-components';
 import Header from '../components/Header';
 import Carousel from '../components/Carousel';
+import Product from '../components/Product';
+import { useEffect, useState } from 'react';
 
 export default function HomePage() {
+  const [productsList, setProductsList] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5173/src/assets/shoes.json')
+      .then((response) => response.json())
+      .then(setProductsList);
+  }, []);
+
   return (
     <HomeContainer>
       <Header />
@@ -12,7 +22,9 @@ export default function HomePage() {
           <h1>ANDE SEMPRE NO ESTILO COM MAX IMPORTS!</h1>
         </FraseContainer>
       </PageUpperSection>
-      <Page>{/* <Carousel /> */}</Page>
+      <Page>
+        <Product productsList={productsList} />
+      </Page>
     </HomeContainer>
   );
 }
@@ -23,11 +35,12 @@ const HomeContainer = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const Page = styled.div`
   background-color: lightgray;
-  width: 100%;
+  width: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -35,7 +48,7 @@ const Page = styled.div`
 
 const PageUpperSection = styled.div`
   background-color: red;
-  width: 100%;
+  width: 80%;
   height: 400px;
   display: flex;
   flex-direction: row;

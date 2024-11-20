@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export default function Product({ productsList }) {
   return (
     <ContainerProduct>
-      <img src={productsList[7].image}></img>
-      <h1>{productsList[2].name}</h1>
-      <h2>{productsList[2].price}</h2>
+      <img src={productsList[7]?.image}></img>
+      <h1>{productsList[2]?.name}</h1>
+      <h2>{productsList[2]?.price}</h2>
     </ContainerProduct>
   );
 }
